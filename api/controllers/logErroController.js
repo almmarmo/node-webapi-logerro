@@ -7,14 +7,13 @@ var LogErro = mongoose.model('LogErro');
 
 exports.criar_log = function(req, res){
     var novoLog = new LogErro(req.body);
-    console.log(req.headers['authorization']);
-    console.log(JSON.stringify(req.headers));
-    //console.log(req);
+    var protocolo = req.headers['protocolo'];
+    novoLog.protocolo = protocolo ? protocolo : Guid.Create();
 
     novoLog.save(function(err, log){
         if(err)
             res.send(err);
-        var result = new ResultModel(Guid.Create());
+        var result = new ResultModel(novoLog.protocolo);
         result.retorno = log;
         res.json(result);
     });

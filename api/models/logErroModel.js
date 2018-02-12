@@ -21,6 +21,10 @@ var exceptionSchema = new Schema({
     }
 });
 var ErroSchema = new Schema({
+    protocolo: {
+        type: String,
+        required: 'Protocolo não informado.'
+    },
     aplicacao: {
         type: String,
         required: 'Aplicação é obrigatória'
@@ -43,7 +47,11 @@ var ErroSchema = new Schema({
     environmentVersion:{
         type: String
     },
-    exception: exceptionSchema
-});
+    exception: exceptionSchema,
+    data: {
+        type: Date,
+        default: new Date()
+    }
+}, {collection: 'logerro'});
 
 module.exports = mongoose.model('LogErro', ErroSchema);
