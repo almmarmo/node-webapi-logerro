@@ -1,0 +1,26 @@
+{
+  "name": "logerro-webapi",
+  "version": "1.0.0",
+  "description": "WebApi para o log de erro",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/almmarmo/node-webapi-logerro.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/almmarmo/node-webapi-logerro/issues"
+  },
+  "homepage": "https://github.com/almmarmo/node-webapi-logerro#readme",
+  "devDependencies": {
+    "nodemon": "^1.14.12"
+  },
+  "dependencies": {
+    "express": "^4.16.2",
+    "mongoose": "^5.0.4"
+  }
+}
